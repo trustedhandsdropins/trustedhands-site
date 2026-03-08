@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Trusted Hands Pet Care | Structured Drop-In Visits</title>
+<meta name="description" content="Structured drop-in pet care designed to keep pets comfortable at home. Fayetteville • Peachtree City • South Atlanta." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f6f7f9;
+  --paper:#ffffff;
+  --ink:#0f172a;
+  --muted:#475569;
+  --line:rgba(15,23,42,.10);
+  --shadow:0 18px 48px rgba(15,23,42,.08);
+  --radius:18px;
+  --max:1060px;
+
+  --accent:#1f7a6b;
+  --accent2:#115e59;
+  --accentSoft:rgba(31,122,107,.12);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background:
+    radial-gradient(900px 500px at 12% 0%, rgba(31,122,107,.10), transparent 55%),
+    radial-gradient(700px 520px at 92% 8%, rgba(31,122,107,.07), transparent 56%),
+    var(--bg);
+  color:var(--ink);
+  line-height:1.55;
+}
+a{color:inherit; text-decoration:none}
+.wrap{max-width:var(--max); margin:0 auto; padding:20px}
+
+header{
+  position:sticky; top:0; z-index:10;
+  background:rgba(246,247,249,.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.bar{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.brand{display:flex; gap:12px; align-items:center; min-width:260px}
+.mark{
+  width:40px; height:40px;
+  border-radius:14px;
+  background:linear-gradient(135deg, rgba(31,122,107,.95), rgba(17,94,89,.92));
+  display:grid; place-items:center;
+  color:#fff; font-weight:900; letter-spacing:.3px;
+  box-shadow:0 10px 28px rgba(15,23,42,.10);
+}
+.brand .name{font-weight:900; letter-spacing:-.2px}
+.brand small{display:block; font-size:12px; color:var(--muted); font-weight:600; margin-top:2px}
+
+nav{display:flex; gap:10px; flex-wrap:wrap}
+nav a{
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:14px;
+  color:var(--muted);
+  transition:background .15s ease, color .15s ease, transform .15s ease;
+}
+nav a:hover{background:rgba(15,23,42,.06); color:var(--ink); transform:translateY(-1px)}
+nav a.primary{
+  background:var(--accentSoft);
+  border:1px solid rgba(31,122,107,.18);
+  color:var(--accent2);
+}
+
+.hero{
+  margin-top:18px;
+  padding:30px;
+  background:rgba(255,255,255,.92);
+  border-radius:var(--radius);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+.kicker{
+  display:inline-flex;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(15,23,42,.06);
+  color:var(--muted);
+  font-weight:800;
+  font-size:12px;
+}
+h1{
+  font-size:clamp(30px,4vw,50px);
+  margin:14px 0 12px;
+  letter-spacing:-.9px;
+  line-height:1.05;
+}
+.sub{color:var(--muted); max-width:74ch; font-size:16px; margin:0 0 16px}
+
+.chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+.chip{
+  padding:8px 10px;
+  border-radius:999px;
+  background:rgba(15,23,42,.05);
+  border:1px solid rgba(15,23,42,.06);
+  color:var(--muted);
+  font-weight:700;
+  font-size:13px;
+}
+.cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:12px 14px;
+  border-radius:12px;
+  font-weight:900;
+  border:1px solid rgba(15,23,42,.10);
+  background:#fff;
+  box-shadow:0 10px 20px rgba(15,23,42,.06);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover{transform:translateY(-1px); box-shadow:0 14px 26px rgba(15,23,42,.08)}
+.btn.primary{
+  border-color:rgba(31,122,107,.22);
+  background:linear-gradient(135deg, rgba(31,122,107,.22), rgba(31,122,107,.10));
+  color:var(--accent2);
+}
+
+.section{
+  margin-top:14px;
+  padding:24px;
+  background:rgba(255,255,255,.92);
+  border-radius:var(--radius);
+  border:1px solid var(--line);
+  box-shadow:0 10px 24px rgba(15,23,42,.06);
+}
+.section h2{margin:0 0 10px; font-size:18px; letter-spacing:-.3px}
+p{margin:0 0 10px; color:var(--muted)}
+ul{margin:0; padding-left:18px}
+li{margin:7px 0; color:var(--muted)}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+@media(min-width:920px){
+  .grid{grid-template-columns:1fr 1fr;}
+}
+
+.about{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:30px;
+  align-items:start;
+}
+
+@media(min-width:920px){
+  .about{
+    grid-template-columns:320px 1fr;
+  }
+}
+
+.about div{
+  max-width:520px;
+}
+
+.aboutPhoto{
+  width:100%;
+  max-width:320px;
+  border-radius:16px;
+  border:1px solid rgba(15,23,42,.10);
+  box-shadow:0 12px 28px rgba(15,23,42,.10);
+  object-fit:cover;
+  aspect-ratio:4 / 3;
+}
+
+.serviceArea{
+  font-size:13px;
+  color:#64748b;
+  margin-top:2px;
+}
+
+.hidden{
+  display:none;
+}
+
+.divider{height:1px; background:rgba(15,23,42,.10); margin:16px 0}
+
+.pricingGrid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+  margin-top:10px;
+}
+@media(min-width:920px){
+  .pricingGrid{grid-template-columns:1fr 1fr;}
+}
+.priceBox{
+  padding:18px;
+  border-radius:16px;
+  border:1px solid rgba(31,122,107,.18);
+  background:linear-gradient(180deg, rgba(31,122,107,.08), rgba(255,255,255,.94));
+}
+.tag{
+  display:inline-flex;
+  margin-left:8px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(31,122,107,.10);
+  border:1px solid rgba(31,122,107,.16);
+  color:var(--accent2);
+  font-size:12px;
+  font-weight:900;
+  vertical-align:middle;
+}
+.fine{font-size:12px; color:var(--muted); font-weight:600}
+
+form{display:grid; gap:10px; margin-top:10px}
+.row{display:grid; grid-template-columns:1fr; gap:10px}
+@media(min-width:920px){ .row{grid-template-columns:1fr 1fr} }
+
+label{font-size:12px; font-weight:900; color:var(--muted)}
+input, select, textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius:12px;
+  border:1px solid rgba(15,23,42,.12);
+  background:#fff;
+  color:var(--ink);
+  outline:none;
+  font-family:Inter, system-ui, sans-serif;
+}
+textarea{min-height:110px; resize:vertical}
+
+.checks{display:grid; gap:8px; margin-top:4px}
+.checks label{font-weight:700}
+.checks input{width:auto; margin-right:8px}
+
+.total{
+  margin-top:10px;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid rgba(31,122,107,.18);
+  background:rgba(31,122,107,.08);
+  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+}
+.total strong{font-size:16px}
+.small{font-size:12px; color:var(--muted); font-weight:600}
+
+.submit{
+  cursor:pointer;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid rgba(31,122,107,.22);
+  background:linear-gradient(135deg, rgba(31,122,107,.22), rgba(31,122,107,.10));
+  color:var(--accent2);
+  font-weight:950;
+  transition:transform .15s ease;
+}
+.submit:hover{transform:translateY(-1px)}
+
+footer{
+  margin:26px 0 12px;
+  padding-top:16px;
+  border-top:1px solid rgba(15,23,42,.10);
+  color:var(--muted);
+  font-size:13px;
+  display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+  font-weight:600;
+}
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  background:rgba(15,23,42,.92);
+  color:#fff;
+  padding:10px 12px;
+  border-radius:999px;
+  font-size:13px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease, transform .2s ease;
+}
+.toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(-2px);
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="bar">
+    <div class="brand">
+      <div class="mark">TH</div>
+      <div>
+        <div class="name">Trusted Hands Pet Care</div>
+        <small>Structured Drop-In Visits</small>
+        <div class="serviceArea">Serving Fayetteville • Peachtree City • Tyrone</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a class="primary" href="#booking">Request</a>
+      <a href="testimonials.html">Testimonials</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero" id="top">
+    <div class="kicker">Fayetteville • Peachtree City • South Atlanta</div>
+    <h1>Calm, consistent drop-in care—at home.</h1>
+    
+    <p style="font-weight:600;color:#1f7a6b;margin-top:6px;">
+Pets stay comfortable in their own home — never transported or boarded.
+</p>
+    <p class="sub">
+      Pets are most comfortable in familiar surroundings. Trusted Hands provides structured drop-in visits designed to keep pets calm, safe, and cared for in the place they know best — home.
+    </p>
+
+    <div class="chips">
+      <div class="chip">Drop-in only</div>
+      <div class="chip">No overnight stays</div>
+      <div class="chip">Photo updates + visit notes</div>
+      <div class="chip">Clear scheduling</div>
+      <div class="chip">Multi-pet friendly</div>
+    </div>
+
+    <div class="cta">
+      <a class="btn primary" href="#booking">Request a booking</a>
+      <a class="btn" href="testimonials.html">Read testimonials</a>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="grid">
+      <div>
+        <h2>What’s included</h2>
+        <p>Every visit is focused on your pet’s routine and comfort.</p>
+        <ul>
+          <li>Fresh food &amp; water refresh</li>
+          <li>Potty break and/or short walk (as requested)</li>
+          <li>Light play/enrichment + calm check-in</li>
+          <li>Medication support (per written instructions)</li>
+          <li>Photo update + visit summary</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Service details</h2>
+        <ul>
+          <li><strong>Service window:</strong> 8:00 AM – 8:00 PM</li>
+          <li><strong>Late evening window:</strong> 8:00 PM – 10:00 PM (by request)</li>
+          <li><strong>Service area:</strong> Fayetteville, Peachtree City, Tyrone, and nearby South Atlanta communities.</li>
+          <li><strong>Drop-in only:</strong> no overnight stays and no boarding</li>
+          <li><strong>Scheduling:</strong> visits are confirmed in advance</li>
+          <li><strong>Availability:</strong> Visits are scheduled in advance and daily availability may be limited to maintain consistent care quality.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="about">
+      <img class="aboutPhoto" src="about.jpg" alt="Trusted Hands Pet Care" style="border-radius:20px; box-shadow:0 12px 28px rgba(0,0,0,.12);">
+      <div>
+        <h2>About Trusted Hands</h2>
+        <p>
+          Trusted Hands is a small, family-operated pet care service focused on structured, in-home visits.
+        </p>
+        <p>
+          Care is provided by a consistent two-person team to ensure reliability and continuity — never outsourced or passed between multiple sitters.
+        </p>
+        <p>
+          Your pet’s routine, comfort, and safety remain our priority at every visit.
+        </p>
+         <p class="fine" style="margin-top:10px;"><strong>Trusted Hands provides professional, in-home pet care focused on safety, consistency, and respect for your home.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <h2>Pricing</h2>
+    <p>Simple, transparent pricing—so you know what to expect.</p>
+
+    <div class="pricingGrid">
+      <div class="priceBox">
+        <div><strong>Essential Visit — 30 minutes | $40</strong> <span class="tag">Popular</span></div>
+        <p style="margin-top:10px">Great for feeding, potty breaks, and routine check-ins.</p>
+      </div>
+
+      <div class="priceBox">
+        <div><strong>Extended Care — 45 minutes | $50</strong> <span class="tag">More time</span></div>
+        <p style="margin-top:10px">Extra time for pets who need a slower pace or more attention.</p>
+        <div class="fine"><strong>Includes 1 pet.</strong> Additional pet fee still applies.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <p class="fine">Each visit is scheduled and priced individually. Clients may request multiple visits per day if needed.</p>
+    
+<p><strong>Additional pet:</strong> +$7 per additional pet (per visit)</p>
+    <p><strong>Weekend visits:</strong> +$10 per visit (Saturday or Sunday)</p>
+    <p><strong>Late evening:</strong> +$10 per visit (8:00 PM – 10:00 PM, by request)</p>
+  </section>
+
+  <section class="section" id="meet">
+    <h2>Meet &amp; greet</h2>
+    <p>
+      A meet &amp; greet is <strong>required for first-time clients</strong>.
+      There is a <strong>$20 meet &amp; greet fee</strong> to reserve your time, credited toward your first visit.
+    </p>
+    <p class="fine">
+      Security details (gate codes, alarm instructions, lockbox combinations) are collected <strong>after</strong> the meet &amp; greet via a separate secure intake.
+    </p>
+  </section>
+
+  <section class="section" id="booking">
+    <h2>Request a booking</h2>
+    <p>Choose your visit details to see an estimate before submitting your request.</p>
+
+    <!-- NETLIFY FORM -->
+    <form id="requestForm"
+          name="booking-request"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="thank-you.html"
+          oninput="calculateTotal()">
+
+      <input type="hidden" name="form-name" value="booking-request" />
+      <input type="hidden" name="subject" value="New Trusted Hands booking request" />
+      <p style="display:none">
+        <label>Don’t fill this out: <input name="bot-field" /></label>
+      </p>
+
+      <!-- Calculated estimate -->
+      <input type="hidden" id="totalHidden" name="estimated_total" value="40" />
+
+      <div class="row">
+        <div>
+          <label for="visit">Visit length</label>
+          <select id="visit" name="visit_length_price">
+            <option value="40">30 minutes — $40</option>
+            <option value="50">45 minutes — $50</option>
+          </select>
+        </div>
+        <div>
+          <label for="pets">Number of pets</label>
+          <input type="number" id="pets" name="number_of_pets" value="1" min="1" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="numVisits">Total visits needed</label>
+          <input type="number" id="numVisits" name="total_visits_needed" value="1" min="1" />
+          <div class="small">Example: 2 visits/day for 3 days = 6 total visits</div>
+        </div>
+        <div>
+          <label for="visitPattern">Visit pattern</label>
+          <select id="visitPattern" name="visit_pattern">
+            <option>One-time</option>
+            <option>2 visits per day</option>
+            <option>3 visits per day</option>
+            <option>Weekly recurring</option>
+            <option>Contact us for a custom plan</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="weekendCount">Weekend visits (Sat/Sun)</label>
+          <input type="number" id="weekendCount" name="weekend_visits_count" value="0" min="0" />
+        </div>
+        <div>
+          <label for="lateCount">Late evening visits (8–10 PM)</label>
+          <input type="number" id="lateCount" name="late_evening_visits_count" value="0" min="0" />
+        </div>
+      </div>
+
+      <div class="total">
+        <div>
+          <strong>Estimated total for this request: $<span id="total">40</span></strong>
+          <div class="small">Estimate based on your selections. Final confirmation may adjust if details change.</div>
+        </div>
+        <div class="small">
+          <div><strong>Weekend:</strong> +$10 per Sat/Sun visit</div>
+          <div><strong>Late:</strong> +$10 per visit (8–10 PM)</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 style="margin:0 0 8px">Location</h2>
+      <div class="row">
+        <div>
+          <label for="address1">Service address (street)</label>
+          <input id="address1" name="service_address_street" type="text" placeholder="123 Main St" required />
+        </div>
+        <div>
+          <label for="zip">ZIP code</label>
+          <input id="zip" name="service_zip" type="text" placeholder="30214" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="city">City</label>
+          <input id="city" name="service_city" type="text" placeholder="Fayetteville" required />
+        </div>
+        <div>
+          <label for="entryType">Entry method (no codes)</label>
+          <select id="entryType" name="entry_method_no_codes" required>
+            <option value="" selected disabled>Select one</option>
+            <option>Key handoff</option>
+            <option>Lockbox</option>
+            <option>Keypad (code shared after meet &amp; greet)</option>
+            <option>Garage access (details shared after meet &amp; greet)</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="entryGeneral">General access notes (optional)</label>
+      <textarea id="entryGeneral" name="general_access_notes_no_codes"
+        placeholder="Examples: “Gated neighborhood” or “Parking is easiest in the driveway.” Please do NOT include gate codes, alarm codes, or lockbox combinations here."></textarea>
+
+      <div class="divider"></div>
+
+      <h2 style="margin:0 0 8px">Your details</h2>
+      <div class="row">
+        <div>
+          <label for="clientName">Your name</label>
+          <input id="clientName" name="client_name" type="text" placeholder="First + last" required />
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" name="client_phone" type="text" placeholder="(555) 555-5555" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="client_email" type="email" placeholder="you@email.com" required />
+        </div>
+        <div>
+          <label for="area">City / neighborhood</label>
+          <input id="area" name="client_area" type="text" placeholder="Fayetteville / Peachtree City / etc." required />
+        </div>
+      </div>
+
+      <label for="dates">Dates needed + preferred time windows</label>
+      <textarea id="dates" name="dates_and_time_windows"
+        placeholder="Example: Mar 10–12. Morning 8–10, evening 5–7."></textarea>
+
+      <div class="checks">
+        <label><input type="checkbox" id="mg" name="meet_and_greet_required_ack" checked />
+          Meet &amp; greet required for first-time clients</label>
+
+        <label><input type="checkbox" id="mgfee" name="meet_and_greet_fee_ack" required />
+          I understand there is a <strong>$20 meet &amp; greet fee</strong> to reserve time (credited toward my first visit).
+        </label>
+      </div>
+
+      <label for="mgTimes">Meet &amp; greet preferred times</label>
+      <input id="mgTimes" name="meet_and_greet_preferred_times" type="text"
+        placeholder="Example: Tue after 6 PM or Thu 12–2" required />
+
+      <label for="notes">Notes (feeding, meds, temperament, etc.)</label>
+      <textarea id="notes" name="pet_notes"
+        placeholder="Share anything helpful so we can confirm the right coverage."></textarea>
+
+      <button class="submit" type="submit">Submit request</button>
+
+      <div class="small" style="margin-top:8px">
+        By submitting, you confirm Trusted Hands Pet Care is <strong>drop-in only</strong> and does not provide overnight stays.
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <div><strong>Trusted Hands Pet Care</strong><br><span class="small">Structured Drop-In Visits</span></div>
+    <div class="small">Fayetteville • Peachtree City • South Atlanta</div>
+  </footer>
+
+</div>
+
+<div id="toast" class="toast">Submitting…</div>
+
+<script>
+function clampCount(value, min, max){
+  const n = Number.isFinite(value) ? value : min;
+  return Math.max(min, Math.min(max, n));
+}
+
+function calculateTotal(){
+  const visit = parseInt(document.getElementById("visit").value, 10);
+
+  const pets = clampCount(parseInt(document.getElementById("pets").value, 10), 1, 50);
+  const numVisits = clampCount(parseInt(document.getElementById("numVisits").value, 10), 1, 365);
+
+  const weekendCount = clampCount(parseInt(document.getElementById("weekendCount").value, 10), 0, numVisits);
+  const lateCount = clampCount(parseInt(document.getElementById("lateCount").value, 10), 0, numVisits);
+
+  const additionalPetsFee = pets > 1 ? (pets - 1) * 7 : 0;
+
+  const weekendAdd = weekendCount * 10;
+  const lateAdd = lateCount * 10;
+
+  const perVisitBase = visit + additionalPetsFee;
+  const total = (perVisitBase * numVisits) + weekendAdd + lateAdd;
+
+  document.getElementById("total").innerText = total;
+  document.getElementById("totalHidden").value = total;
+
+  if (weekendCount > numVisits) document.getElementById("weekendCount").value = numVisits;
+  if (lateCount > numVisits) document.getElementById("lateCount").value = numVisits;
+}
+
+calculateTotal();
+
+function showToast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(()=>t.classList.remove("show"), 2200);
+}
+
+document.getElementById("requestForm").addEventListener("submit", function(){
+  showToast("Submitting…");
+});
+</script>
+
+<!-- Netlify form detection helper (hidden) -->
+<form name="booking-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="booking-request" />
+  <p class="hidden">
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
+  <input type="text" name="client_name" />
+  <input type="email" name="client_email" />
+</form>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!-- =========================
+FILE 2: testimonials.html (C: clean modern, same fonts/colors)
+========================= -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Testimonials | Trusted Hands Pet Care</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#f6f7f9;
+    --paper:#ffffff;
+    --ink:#0f172a;
+    --muted:#475569;
+    --line:rgba(15,23,42,.10);
+    --shadow: 0 18px 48px rgba(15,23,42,.10);
+    --shadow2: 0 10px 28px rgba(15,23,42,.08);
+
+    --accent:#1f7a6b;
+    --accent2:#115e59;
+    --wash: rgba(31,122,107,.08);
+
+    --radius:18px;
+    --max:1060px;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(900px 500px at 12% 0%, rgba(31,122,107,.10), transparent 55%),
+      radial-gradient(700px 520px at 92% 8%, rgba(31,122,107,.07), transparent 56%),
+      var(--bg);
+    line-height:1.55;
+  }
+  a{color:inherit; text-decoration:none}
+
+  header{
+    position:sticky; top:0; z-index:10;
+    backdrop-filter: blur(12px);
+    background: rgba(246,247,249,.70);
+    border-bottom: 1px solid rgba(15,23,42,.08);
+  }
+  .bar{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:14px 20px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:12px; flex-wrap:wrap;
+  }
+  .brand{display:flex; align-items:center; gap:12px; min-width:260px}
+  .mark{
+    width:42px; height:42px; border-radius:14px;
+    background: linear-gradient(135deg, rgba(31,122,107,.95), rgba(17,94,89,.92));
+    box-shadow: var(--shadow2);
+    display:grid; place-items:center;
+    color:#fff; font-weight:900; letter-spacing:.4px;
+  }
+  .brand .name{font-weight:900; letter-spacing:-.2px}
+  .brand small{display:block; color:var(--muted); font-weight:600; margin-top:2px}
+
+  .navlink{
+    padding:10px 12px;
+    border-radius:999px;
+    font-weight:800;
+    color: var(--muted);
+    transition: background .15s ease, color .15s ease, transform .15s ease;
+  }
+  .navlink:hover{background: rgba(15,23,42,.06); color: var(--ink); transform: translateY(-1px)}
+  .navlink.primary{
+    background: var(--wash);
+    color: var(--accent2);
+    border: 1px solid rgba(31,122,107,.18);
+  }
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:20px}
+
+  .hero{
+    margin-top:18px;
+    padding:26px;
+    border-radius: var(--radius);
+    background: rgba(255,255,255,.88);
+    border: 1px solid rgba(15,23,42,.10);
+    box-shadow: var(--shadow);
+  }
+  h1{
+    margin:0 0 10px;
+    font-size: clamp(26px, 3.4vw, 42px);
+    letter-spacing:-.8px;
+    line-height:1.08;
+  }
+  p{margin:0 0 10px; color: var(--muted)}
+  .small{font-size:12px; color: var(--muted); font-weight:600}
+
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-top:14px;
+  }
+  @media(min-width:920px){ .grid{grid-template-columns: 1fr 1fr} }
+
+  .card{
+    padding:22px;
+    border-radius: var(--radius);
+    background: rgba(255,255,255,.92);
+    border: 1px solid rgba(15,23,42,.10);
+    box-shadow: 0 10px 24px rgba(15,23,42,.06);
+  }
+
+  .quote{
+    padding:18px;
+    border-radius: 16px;
+    border: 1px solid rgba(15,23,42,.10);
+    background:#fff;
+  }
+  .quote strong{display:block; margin-bottom:8px}
+  .who{margin-top:10px; font-size:12px; color: var(--muted); font-weight:700}
+
+  form{display:grid; gap:10px; margin-top:10px}
+  .row{display:grid; grid-template-columns:1fr; gap:10px}
+  @media(min-width:920px){ .row{grid-template-columns:1fr 1fr} }
+  label{font-size:12px; font-weight:900; color: var(--muted)}
+  input, textarea{
+    width:100%;
+    padding:12px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(15,23,42,.12);
+    background:#fff;
+    font-family: Inter, system-ui, sans-serif;
+    color: var(--ink);
+    outline:none;
+  }
+  textarea{min-height:110px; resize:vertical}
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:12px 14px;
+    border-radius: 12px;
+    font-weight:900;
+    border: 1px solid rgba(31,122,107,.22);
+    background: linear-gradient(135deg, rgba(31,122,107,.22), rgba(31,122,107,.10));
+    color: var(--accent2);
+    cursor:pointer;
+    transition: transform .15s ease;
+  }
+  .btn:hover{transform: translateY(-1px)}
+
+  footer{
+    margin:26px 0 12px;
+    padding-top:16px;
+    border-top:1px solid rgba(15,23,42,.10);
+    color: var(--muted);
+    font-size:13px;
+    display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    font-weight:600;
+  }
+
+  .toast{
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    background: rgba(15,23,42,.92);
+    color:#fff;
+    padding:10px 12px;
+    border-radius:999px;
+    font-size:13px;
+    opacity:0;
+    pointer-events:none;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  .toast.show{
+    opacity:1;
+    transform: translateX(-50%) translateY(-2px);
+  }
+</style>
+</head>
+
+<body>
+<header>
+  <div class="bar">
+    <div class="brand">
+      <div class="mark">TH</div>
+      <div>
+        <div class="name">Trusted Hands Pet Care</div>
+        <small>Testimonials</small>
+      </div>
+    </div>
+    <nav>
+      <a class="navlink" href="index.html">Home</a>
+      <a class="navlink primary" href="#submit">Add a testimonial</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>Words from pet families.</h1>
+    <p>Calm, structured care—designed to keep pets comfortable at home.</p>
+    <p class="small">Replace the sample testimonials below as you collect real ones.</p>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h2 style="margin:0 0 10px; font-size:18px; letter-spacing:-.3px;">Recent testimonials</h2>
+
+      <div class="quote">
+        <strong>“Consistent, professional, and calm.”</strong>
+        <p>Our pets were relaxed when we got home, and the updates were exactly what we needed.</p>
+        <div class="who">— Client • Neighborhood</div>
+      </div>
+
+      <div class="quote" style="margin-top:12px">
+        <strong>“Reliable and reassuring.”</strong>
+        <p>Structured, clear communication. It felt safe and easy from the start.</p>
+        <div class="who">— Client • Neighborhood</div>
+      </div>
+    </div>
+
+    <div class="card" id="submit">
+      <h2 style="margin:0 0 10px; font-size:18px; letter-spacing:-.3px;">Submit a testimonial</h2>
+      <p class="small">
+        Photo uploads require a form tool (Google Forms/Jotform). For now, paste a photo link (iCloud/Google Photos/Dropbox).
+      </p>
+
+      <form id="testForm">
+        <div class="row">
+          <div>
+            <label for="name">Your name</label>
+            <input id="name" type="text" placeholder="First name (or initials)" required />
+          </div>
+          <div>
+            <label for="loc">City / neighborhood</label>
+            <input id="loc" type="text" placeholder="Fayetteville / Peachtree City / etc." />
+          </div>
+        </div>
+
+        <label for="text">Testimonial</label>
+        <textarea id="text" placeholder="Share your experience in your own words..." required></textarea>
+
+        <label for="photo">Photo link (optional)</label>
+        <input id="photo" type="url" placeholder="Paste a share link (optional)" />
+
+        <button class="btn" type="submit">Submit</button>
+        <div class="small">This page doesn’t store submissions yet—connect a form tool to receive them automatically.</div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div><strong>Trusted Hands Pet Care</strong><br><span class="small">Structured Drop-In Visits</span></div>
+    <div class="small">Fayetteville • Peachtree City • South Atlanta</div>
+  </footer>
+</div>
+
+<div id="toast" class="toast">Testimonial captured on-screen. Connect a form tool to receive it.</div>
+
+<script>
+  function showToast(msg){
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    setTimeout(()=>t.classList.remove("show"), 2200);
+  }
+  document.getElementById("testForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    showToast("Testimonial captured on-screen. Next step: connect Netlify Forms or a form tool.");
+  });
+</script>
+
+</body>
+</html>
