@@ -440,7 +440,9 @@ Pets stay comfortable in their own home — never transported or boarded.
 
     <!-- NETLIFY FORM -->
     <form id="requestForm" method="POST" action="https://formsubmit.co/peternalcareteam@gmail.com" oninput="calculateTotal()">
-
+    <input type="hidden" name="_next" value="https://trustedhands-site.pages.dev/thank-you.html">
+    <input type="hidden" name="_subject" value="New Trusted Hands booking request">
+    <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="form-name" value="booking-request" />
       <input type="hidden" name="subject" value="New Trusted Hands booking request" />
       <p style="display:none">
@@ -651,5 +653,6 @@ document.getElementById("requestForm").addEventListener("submit", function(){
 </body>
 
 </html>
+
 
 
