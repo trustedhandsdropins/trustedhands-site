@@ -565,8 +565,16 @@ Pets stay comfortable in their own home — never transported or boarded.
         <input id="petNames" name="pet_names" type="text" placeholder="Example: Luna, Max">
      </div>
         <div>
-          <label for="area">City / neighborhood</label>
-          <input id="area" name="client_area" type="text" placeholder="Fayetteville / Peachtree City / etc." required />
+          <label for="area">Service area</label>
+<select id="area" name="client_area" required>
+  <option value="">Select your area</option>
+  <option value="Fayetteville">Fayetteville</option>
+  <option value="Peachtree City">Peachtree City</option>
+  <option value="Tyrone">Tyrone</option>
+  <option value="Sharpsburg">Sharpsburg</option>
+  <option value="South Fayette">South Fayette</option>
+  <option value="Other">Other / outside area</option>
+</select>
         </div>
       </div>
 
@@ -656,6 +664,7 @@ document.getElementById("requestForm").addEventListener("submit", function(){
 </body>
 
 </html>
+
 
 
 
