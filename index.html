@@ -562,7 +562,7 @@ Pets stay comfortable in their own home — never transported or boarded.
         </div>
         <div>
         <label for="petNames">Pet Name(s)</label>
-        <input id="petNames" name="pet_names" type="text" placeholder="Example: Luna, Max">
+        <input id="petNames" name="pet_names" type="text" placeholder="Example: Luna, Max"> required />
      </div>
         <div>
           <label for="area">Service area</label>
@@ -580,7 +580,7 @@ Pets stay comfortable in their own home — never transported or boarded.
 
       <label for="dates">Dates needed + preferred time windows</label>
       <textarea id="dates" name="dates_and_time_windows"
-        placeholder="Example: Mar 10–12. Morning 8–10, evening 5–7."></textarea>
+        placeholder="Example: Mar 10–12. Morning 8–10, evening 5–7." required></textarea>
 
       <div class="checks">
         <label><input type="checkbox" id="mg" name="meet_and_greet_required_ack" checked />
@@ -664,6 +664,7 @@ document.getElementById("requestForm").addEventListener("submit", function(){
 </body>
 
 </html>
+
 
 
 
