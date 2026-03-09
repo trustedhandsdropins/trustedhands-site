@@ -445,9 +445,9 @@ Pets stay comfortable in their own home — never transported or boarded.
     <input type="hidden" name="_redirect" value="https://trustedhands-site.pages.dev/thank-you.html">
     <input type="hidden" name="_subject" value="New Trusted Hands booking request">
     <input type="hidden" name="_captcha" value="true">
-       <p style="display:none;">
-        <label>Don’t fill this out: <input name="bot-field" /></label>
-      </p>
+       <div aria-hidden="true" style="position:absolute; left:-5000px;">
+  <label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+</div>
 
       <!-- Calculated estimate -->
       <input type="hidden" id="totalHidden" name="estimated_total" value="40" />
@@ -664,6 +664,7 @@ document.getElementById("requestForm").addEventListener("submit", function(){
 </body>
 
 </html>
+
 
 
 
